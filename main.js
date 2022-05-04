@@ -12,5 +12,5 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
   var modalBodyInput = exampleModal.querySelector('.modal-body input')
 
   modalTitle.textContent = 'LOGIN AS  ' + recipient
-  modalBodyInput.value.h= recipient
+  // modalBodyInput.value.h= recipient
 })
