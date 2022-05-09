@@ -76,19 +76,29 @@
   
 
 
-  <div class="container">
+  <div class="container text-center">
     <br>
     <div align="center">
-        <form data-scroll-reveal="enter from the bottom after 0.2s" action="studentvalidation.php" method="post">
-            <select id="select_semester" name="select_semester" class="list-group-item">
-                <option selected disabled>Select course</option>
-                <option value="3"> Bsc.IT </option>
-                <option value="4"> Bsc.CCS</option>
-                <option value="5"> Bsc.CIM </option>
-                <option value="6"> Bsc.CIS </option>
-                <option value="7"> Bsc.ED </option>
-                <option value="8"> Bsc.EAD </option>
+        <form  data-scroll-reveal="enter from the bottom after 0.2s" action="studentvalidation.php" method="post">
+            <div class="row">
+              <div class="col">
+                <select id="select_semester" name="select_semester" class="list-group-item ">
+                  <option selected disabled>Select course</option>
+                  <option value="3"> Bsc.IT </option>
+                  <option value="4"> Bsc.CCS</option>
+                  <option value="5"> Bsc.CIM </option>
+              </select>
+              </div>
+            <div class="col">
+              <select id="select_semester" name="select_semester" class="list-group-item ">
+                <option selected disabled>Select Year</option>
+                <option value="3"> Year I </option>
+                <option value="4"> Year II</option>
+                <option value="5"> Year III </option>
+                <option value="6"> Year IV </option>
             </select>
+            </div>
+            </div>
             <button type="submit" class="btn btn-info btn-lg" style="margin-top: 10px">Download</button>
         </form>
     </div>
