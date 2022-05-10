@@ -3,7 +3,8 @@ exampleModal.addEventListener('show.bs.modal', function(event) {
     // Button that triggered the modal
     var button = event.relatedTarget
         // Extract info from data-bs-* attributes
-    var recipient = button.getAttribute('data-bs-whatever')
+    // var recipient = button.getAttribute('data-bs-whatever')
+    var recipient=button.textContent
         // If necessary, you could initiate an AJAX request here
         // and then do the updating in a callback.
         //
@@ -12,8 +13,8 @@ exampleModal.addEventListener('show.bs.modal', function(event) {
     var modalBodyInput = exampleModal.querySelector('.modal-body input')
 
 
-  modalTitle.textContent = 'LOGIN AS   ' + recipient
-
+  modalTitle.textContent = 'LOGIN AS  ' + recipient
+console.log(modalTitle.textContent)
   // modalBodyInput.value.h= recipient
 
 })
