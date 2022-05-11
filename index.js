@@ -1,21 +1,16 @@
 const express=require('express')
-const path=require('path')
-const mysql=require('mysql')
-const expHandlebars=require('express-handlebars')
+const handlebars=require('express-handlebars')
 const app=express()
-let PORT=process.env.PORT||5000
 
-
-
-//Sets handlebars configurations (we will go through them later on)
-app.engine('handlebars', handlebars({
+const PORT=process.env.PORT||5000
+app.set('view engine','handlebars')
+app.engine('handlebars',handlebars.engine({
     layoutsDir: __dirname + '/views/layouts',
-    }))
-// body parser middleware function
-app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+}))
+app.use(express.static('public'))
+app.get('/', (req, res) => {
+//Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+res.render('main', {layout : 'index'})
+});
 
-app.listen(PORT,(req,res)=>{
-    
-    console.log(":server running on port",PORT)
-})
+app.listen(PORT,()=>`server listeniing on port ${PORT}`)
