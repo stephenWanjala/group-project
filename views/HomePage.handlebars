@@ -60,8 +60,16 @@ selectCourse.addEventListener('change', (event) => {
    
   const enableSemester = document.querySelector('.selectSemester');
     enableSemester.disabled = false;
+    enableSemester.addEventListener('change',(event)=>{
+        const downloadButton=document.querySelector('#downloadButton')
+        .disabled=false
+    })
  
 })
+
+
+//enable download button
+
     </script
 
 <footer class="text-center">
