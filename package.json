@@ -19,7 +19,8 @@
     "express-handlebars": "^6.0.6",
     "mysql": "^2.18.1",
     "orm": "^7.0.0",
-    "pdfkit": "^0.13.0"
+    "pdfkit": "^0.13.0",
+    "voilab-pdf-table": "^0.5.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"

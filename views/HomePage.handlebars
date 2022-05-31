@@ -12,44 +12,59 @@
     
         <div class="mb-3 col-4">
     <label for="" class="form-label"></label>
-    <select class="form-select" name="course" id="">
+    <select class="form-select selectCourse" name="course" id="selectCourse"  >
         <option selected>Select course</option>
-        <option value="">Bsc. IT</option>
-        <option value="">Bsc. ICTM</option>
-        <option value="">Bsc. IS</option>
+        <option value="it">Bsc. IT</option>
+        <option value="ictm">Bsc. ICTM</option>
+        <option value="is">Bsc. IS</option>
     </select>
 </div>
 
-
         <div class="mb-3 col-4">
     <label for="" class="form-label"></label>
-    <select class="form-select" name="course" id="">
+    <select disabled   class="form-select selectYear"  name="course" id="selectYear">
         <option selected>Select Year</option>
-        <option value="">Year I</option>
-        <option value="">Year II</option>
-        <option value="">Year III</option>
+        <option value="1">Year I</option>
+        <option value="2">Year II</option>
+        <option value="3">Year III</option>
     </select>
 </div>
 
         <div class="mb-3 col-4">
-    <label for="" class="form-label"></label>
-    <select class="form-select" name="course" id="">
+    <label for=""  class="form-label"></label>
+    <select disabled  class="form-select selectSemester" name="course" id="selectSemester "
+       >
         <option selected>Select semester</option>
-        <option value="">Sem I</option>
-        <option value="">Sem II</option>
+        <option value="1">Sem I</option>
+        <option value="3">Sem II</option>
         
     </select>
 </div>
     
 </div>
 <div class="text-center">
-    <input type="submit" value="Download" class="btn btn-info btn-lg " disabled>
+    <input type="submit" value="Download" class="btn btn-info btn-lg " id="downloadButton" disabled>
 </div>
 </form>
 
+<script>
+ const selectCourse = document.querySelector('.selectCourse');
 
+selectCourse.addEventListener('change', (event) => {
+  const enableYear = document.querySelector('.selectYear');
+    enableYear.disabled = false;
+ 
+})
+ const Year = document.querySelector('.selectYear')
+ Year.addEventListener('change', (event) => {
+   
+  const enableSemester = document.querySelector('.selectSemester');
+    enableSemester.disabled = false;
+ 
+})
+    </script
 
-<footer style="text-align: center;">
+<footer class="text-center">
 
 <!-- CONTACT SECTION END-->
 <div class="d-flex container-fluid fixed-bottom align-text-bottom ">
@@ -58,4 +73,5 @@
     </div>
   
 </div>
+
 </footer>
