@@ -1,0 +1,4 @@
+class InputData{
+    constructor(studentGroup)
+
+}
