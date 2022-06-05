@@ -6,6 +6,9 @@ class Gene {
         let arrayOfSlots = [];
         let daysPerWeek = 5;
         let hoursPerDay = 8;
+
+        // daysperwek & hoursperday should Be from inputdata.js
+
         this.numInteger = numInteger;
         let randomNumber=new RandomNumber();
 
@@ -20,7 +23,7 @@ class Gene {
             
 
             let temp
-			while(flag[temp=r.nextInt(days*hours)]==true){}
+			while(flag[temp=randomNumber.nextInt(days*hours)]==true){}
 			flag[temp]=true;
 			arrayOfSlots[j]=i*days*hours + temp;
 
