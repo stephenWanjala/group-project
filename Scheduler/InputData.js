@@ -1,8 +1,9 @@
+import StudentGroup from "./Entities/StudentGroup";
 
 export default class InputData {
     public static crossOverRate: number = 1.0;
     public static mutationRate: number = 0.1;
-    public static studentGroup=new Array<StudentGroup>();
+    public static studentGroup:Array<StudentGroup>=new Array<StudentGroup>();
     public static lecturer=new Array<Lecturer>();
     public static hoursPerDay: number 
     public static daysPerWeek: number

@@ -1,4 +1,4 @@
-class units{
+export default class units{
     constructor(unitId,unitName,smesterTaught){
         this.unitId=unitId;
         this.unitName=unitName;

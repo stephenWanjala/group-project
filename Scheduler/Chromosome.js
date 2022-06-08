@@ -1,4 +1,5 @@
 import { setFlagsFromString } from "v8";
+import Slot from "./Entities/Slots";
 import { Gene } from "./Gene";
 import InputData from "./InputData"
 
@@ -22,13 +23,19 @@ export default class Chromosome {
 
     }
 
+    Chromosome.fitness=this.getFitness()
+
+}
+
     getFitness=()=>{
         Chromosome.point=0
         fo(let i=0; i< Chromosome.hours*Chromosome.days; i++){
+            const lecturerList:Array<Number>=new Array<Number>()
 
+
+            
         }
     }
            
 }
     
-}
