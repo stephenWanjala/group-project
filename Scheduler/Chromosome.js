@@ -68,30 +68,30 @@ return  Chromosome.fitness
 
 
 
-// printing fNal Table
+// // printing fNal Table
 
-printFinalTimetaBle=()=>{
-    	//for each student group separate time table
-   for(let i=0; i<Chromosome.noStudentGroup; i++){  
+// printFinalTimetaBle=()=>{
+//     	//for each student group separate time table
+//    for(let i=0; i<Chromosome.noStudentGroup; i++){  
 
-    //status used to get name of student grp because in case first class is free it will throw error
-    // nu;ll
-    status:Boolean=false
-    l:Number=0
+//     //status used to get name of student grp because in case first class is free it will throw error
+//     // nu;ll
+//     status:Boolean=false
+//     l:Number=0
 
 
-        while (!status) {
+//         while (!status) {
 
-            if(TimeTable.slots[this.gene[i].arrayOfSlots[l]]!=null){
-                status=true
+//             if(TimeTable.slots[this.gene[i].arrayOfSlots[l]]!=null){
+//                 status=true
 
-            }
+//             }
             
             
-        }
-        i++
+//         }
+//         i++
 
-   }
+//    }
 
 
     
