@@ -1,12 +1,13 @@
 
 //gene represents permutation of slots as timetable for a single student group(looks like {5,22,14,1,...} )
 export default class Gene {
-        arrayOfSlots 
+    
+         public arrayOfSlots: Array<Number>;
          daysPerWeek
          hoursPerDay 
          randomNumber
     constructor(numInteger) {
-         this.arrayOfSlots = [];
+         this.arrayOfSlots = Array<Number>
          this.daysPerWeek = InputData.prototype.getDaysPerWeek;
          this.hoursPerDay=InputData.prototype.getHoursPerDay
 

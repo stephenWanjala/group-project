@@ -1,7 +1,8 @@
-import { setFlagsFromString } from "v8";
+
 import Slot from "./Entities/Slots";
 import { Gene } from "./Gene";
 import InputData from "./InputData"
+import TimeTable from "./TimeTable";
 
 export default class Chromosome {
     public static crossOverRate: number 
@@ -32,10 +33,26 @@ export default class Chromosome {
         fo(let i=0; i< Chromosome.hours*Chromosome.days; i++){
             const lecturerList:Array<Number>=new Array<Number>()
 
+            for(let j=0; j<Chromosome.noStudentGroup; j++){{
+               const slot:Slot
 
+               if(TimeTable.slots[this.gene[j].arrayOfSlots[i]]!=null){
+                   slot=TimeTable.slots[this.gene[j].arrayOfSlots[i]]
+               }  else{
+                   slot=null
+               }
+
+
+            //    check if slot is now !null
+
+            if(slot!=null){
+                
+            }
+            }
             
         }
     }
            
 }
     
+}

@@ -2,7 +2,7 @@ import InputData from "./InputData";
 import Slot from "./Entities/Slots";
 
 export default class TimeTable {  
-     public static slots=new Array<Slot>();
+     public static slots:Array<Number>=new Array<Number>;
      
      constructor(){
          this.k=0
