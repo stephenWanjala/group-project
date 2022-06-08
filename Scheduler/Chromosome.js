@@ -11,7 +11,7 @@ export default class Chromosome {
     public static days=InputData.daysPerWeek
     public static noStudentGroup=InputData.noStudentGroup
     public static noLecturer=InputData.noLecturer
-    public static fitness:Double
+    public static fitness:Number
     public static point:Number
 
     public gene:Array<Gene>=new Gene(Chromosome.noStudentGroup)
@@ -56,7 +56,16 @@ export default class Chromosome {
             
         }
     }
+
+    // point
+
+
+Chromosome.fitness=1-(Chromosome.point/((Chromosome.noStudentGroup)*Chromosome.hours*Chromosome.days))
+Chromosome.point=0
+return  Chromosome.fitness
            
 }
+
+
     
 }
