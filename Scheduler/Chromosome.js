@@ -46,7 +46,11 @@ export default class Chromosome {
             //    check if slot is now !null
 
             if(slot!=null){
-                
+                if(lecturerList.includes(slot.lecturerId)){
+                    Chromosome.point++
+                }   else{ 
+                    lecturerList.push(slot.lecturerId)  
+                }
             }
             }
             
