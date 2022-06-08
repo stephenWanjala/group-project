@@ -84,10 +84,12 @@ printFinalTimetaBle=()=>{
 
             if(TimeTable.slots[this.gene[i].arrayOfSlots[l]]!=null){
                 status=true
-                
+
             }
             
+            
         }
+        i++
 
    }
 
