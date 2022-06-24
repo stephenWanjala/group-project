@@ -100,6 +100,10 @@ exports.editUser=(req,res)=>{
          })
     }) 
 }
+
+exports.OpenLecturerLoginForm=(req,res)=>{
+    res.render('login')
+}
 exports.updateUser=(req,res)=>{
     const {first_name,last_name,email,phone,comments}=req.body
     pool.getConnection((err,connection)=>{
@@ -124,6 +128,8 @@ exports.updateUser=(req,res)=>{
 
 
 exports.generateDownloadTimeTable=(req,res)=>{
-    
+
     res.send("hello")
 }
+
+

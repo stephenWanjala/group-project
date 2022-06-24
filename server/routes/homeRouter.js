@@ -12,6 +12,8 @@ router.post('/addUser',userController.create)
 router.get('/editUser/:id',userController.editUser)
 router.post('/editUser/:id',userController.updateUser)
 
+router.get('/lecturerLogin',userController.OpenLecturerLoginForm)
+
 // router.get('', (req, res) => res.render(('home')))
 // route
 
