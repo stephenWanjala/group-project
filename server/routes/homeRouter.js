@@ -2,9 +2,10 @@ const express = require('express');
 const router=express.Router()
 const userController=require('../controllers/homeController')
 
+
 router.get('/',userController.view)
 
-router.get('/download',homeController.generateDownloadTimeTable)
+router.get('/download',userController.generateDownloadTimeTable)
 router.post('/',userController.find)
 router.get('/addUser',userController.form)
 router.post('/addUser',userController.create)

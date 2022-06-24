@@ -1,4 +1,4 @@
-class lectureHalls{
+ class lectureHalls{
     constructor(lectureHallId,lectureHallName,capacity){
         this.lectureHallId=lectureHallId;
         this.lectureHallName=lectureHallName;

@@ -1,7 +1,7 @@
 import InputData from "./InputData";
 import Slot from "./Entities/Slots";
 
-export default class TimeTable {  
+module.exports=class TimeTable {  
      public static slots:Array<Number>=new Array<Number>;
      
      constructor(){

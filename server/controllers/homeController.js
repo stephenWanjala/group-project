@@ -122,6 +122,7 @@ exports.updateUser=(req,res)=>{
 }
 
 
-exports.generateDownloadTimeTable('/dowload',(req,res))=>{
+
+exports.generateDownloadTimeTable=(req,res)=>{
     res.send("hello")
 }

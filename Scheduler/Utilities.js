@@ -1,3 +1,3 @@
-export default class Utilities {
+module.exports= class Utilities {
     
 }

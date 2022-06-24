@@ -4,7 +4,7 @@ import { Gene } from "./Gene";
 import InputData from "./InputData"
 import TimeTable from "./TimeTable";
 
-export default class Chromosome {
+module.exports=class Chromosome {
     public static crossOverRate: number 
     public static mutationRate: number 
     public static hours=InputData.hoursPerDay
