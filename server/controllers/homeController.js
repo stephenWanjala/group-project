@@ -12,124 +12,37 @@ const pool = mysql.createPool({
 })
 
 
-// view users
+// Home view
 exports.view=(req,res)=>{
 
     res.render('homePage')
-    // pool.getConnection((err,connection)=>{
-    //     if(err) throw err 
-    //     console.log('connected with-> ',connection.threadId)
-
-    //     // user connection
-
-    //     connection.query(` SELECT * from ${process.env.databaseName}.user`,(err,rows)=>{
-    //         if(!err){
-    //             res.render('home',{rows})
-    //             console.log(`data returned ${rows.toString()}`)
-    //         } else{
-    //            console.log("There is an error",err)
-    //         }
-    //      })
-    // })  
+   
 }
 
-exports.find=(req,res)=>{
-    pool.getConnection((err,connection)=>{
-        if(err) throw err 
-        console.log('connected with-> ',connection.threadId)
 
-        // user connection
-        let searchTerm=req.body.search
-
-        connection.query(`select * from ${process.env.databaseName}.user where first_name like ? `,['%'+ searchTerm+'%'],(err,rows)=>{
+exports.login=(req,res)=>{
+    const {lecturerId,password}=req.body
+    pool.getConnection((err,connection)=>{  // get connection from pool
+        if(err) throw err;
+        console.log('connected with-> ', connection.threadId);
+        connection.query(`select * from ${process.env.databaseName}.lecturer where lecturerId=? and lecturerId=?`,[email,password],(err,rows)=>{  
             if(!err){
-                res.render('home',{rows})
-                console.log(`data returned ${rows}`)
-            } else{
-               console.log("There is an error",err)
+                if(rows.length>0){
+                    res.render('adminLogin',{lecturerId:lecturerId})
+                }else{
+                    res.render('homePage',{error:'Invalid lecturerId or password'})
+                }
+            }else{
+                console.log("There is an error",err);
             }
+        })
          })
-    }) 
-}
-
-// display form
-exports.form=(req,res)=>{
-    res.render('addUser')
-}
-
-// add new user
-
-exports.create=(req,res)=>{
-    const {first_name,last_name,email,phone,comments}=req.body
+            
     
-    pool.getConnection((err,connection)=>{
-        if(err) throw err 
-        console.log('connected with-> ',connection.threadId)
-
-        // user connection
-        let searchTerm=req.body.search
-
-        connection.query(`insert  into ${process.env.databaseName}.user set first_name=?,last_name=?,
-         email=?,phone=?, comments=?`,[first_name,last_name,email,phone,comments],(err,rows)=>{
-            if(!err){
-                res.render('addUser',{alert:`user  added succefuly`})
-                console.log(`add User data returned ${rows}`)
-            } else{
-               console.log("There is an error",err)
-            }
-         })
-    })
 }
-
-exports.editUser=(req,res)=>{
-    pool.getConnection((err,connection)=>{
-        if(err) throw err 
-        console.log('connected with-> ',connection.threadId)
-
-        // user connection
-       
-
-        connection.query(`select * from ${process.env.databaseName}.user where
-         id=?  `,[req.params.id],(err,rows)=>{
-            if(!err){
-                res.render('editUser',{rows})
-                console.log(`data returned ${rows}`)
-            } else{
-               console.log("There is an error",err)
-            }
-         })
-    }) 
-}
-
-exports.OpenLecturerLoginForm=(req,res)=>{
-    res.render('login')
-}
-exports.updateUser=(req,res)=>{
-    const {first_name,last_name,email,phone,comments}=req.body
-    pool.getConnection((err,connection)=>{
-        if(err) throw err 
-        console.log('connected with-> ',connection.threadId)
-
-        // user connection
-       
-
-        connection.query(`update ${process.env.databaseName}.user set first_name=?,last_name=?, email=?, phone=?,comments=? where id=? `
-        ,[first_name,last_name,email,phone,comments,req.params.id],(err,rows)=>{
-            if(!err){
-                res.render('editUser',{rows})
-                console.log(`data returned ${rows}`)
-            } else{
-               console.log("There is an error",err)
-            }
-         })
-    }) 
-}
-
 
 
 exports.generateDownloadTimeTable=(req,res)=>{
 
-    res.send("hello")
+    res.send("hello please wait while we are generating your timetable")    
 }
-
-

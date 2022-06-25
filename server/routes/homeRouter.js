@@ -6,15 +6,10 @@ const userController=require('../controllers/homeController')
 router.get('/',userController.view)
 
 router.get('/download',userController.generateDownloadTimeTable)
-router.post('/',userController.find)
-router.get('/addUser',userController.form)
-router.post('/addUser',userController.create)
-router.get('/editUser/:id',userController.editUser)
-router.post('/editUser/:id',userController.updateUser)
 
-router.get('/lecturerLogin',userController.OpenLecturerLoginForm)
 
-// router.get('', (req, res) => res.render(('home')))
-// route
+router.get('/login',userController.login)
+
+
 
 module.exports=router
