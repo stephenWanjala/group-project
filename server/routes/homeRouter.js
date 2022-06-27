@@ -5,10 +5,14 @@ const userController=require('../controllers/homeController')
 
 router.get('/',userController.view)
 
-router.get('/download',userController.generateDownloadTimeTable)
+router.post('/download', function (req, res, next) {
+    var pdf = require('./../controllers/generatePdf').create();
+    pdf.pipe(res);
+    pdf.end();
+ });
 
-
-router.get('/login',userController.login)
+router.post('/login',userController.login)
+// router.get('/login',userController.login)
 
 
 

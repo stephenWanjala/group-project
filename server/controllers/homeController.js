@@ -22,14 +22,18 @@ exports.view=(req,res)=>{
 
 exports.login=(req,res)=>{
     const {lecturerId,password}=req.body
+
     pool.getConnection((err,connection)=>{  // get connection from pool
         if(err) throw err;
         console.log('connected with-> ', connection.threadId);
-        connection.query(`select * from ${process.env.databaseName}.lecturer where lecturerId=? and lecturerId=?`,[email,password],(err,rows)=>{  
+        connection.query(`select * from ${process.env.databaseName}.lecturer where lecturerId=? and lecturerId=?`,[1,1],(err,rows)=>{  
             if(!err){
                 if(rows.length>0){
-                    res.render('adminLogin',{lecturerId:lecturerId})
+                    // res.send("succes")
+                    res.render('adminLogin',{rows:rows})
+                    console.log(rows)
                 }else{
+                    // res.send("Error")
                     res.render('homePage',{error:'Invalid lecturerId or password'})
                 }
             }else{
@@ -43,6 +47,10 @@ exports.login=(req,res)=>{
 
 
 exports.generateDownloadTimeTable=(req,res)=>{
+    var PdfTable = require('voilab-pdf-table'),
+    PdfDocument = require('pdfkit');
 
-    res.send("hello please wait while we are generating your timetable")    
+    
+
+    
 }
